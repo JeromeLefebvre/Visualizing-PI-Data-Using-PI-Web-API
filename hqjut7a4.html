@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+
+  
+  
+
+  
+  
+  
+
+  
+
+  <script type="text/javascript" src="/js/lib/dummy.js"></script>
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+
+  
+    
+      <script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    
+  
+    
+      <script type="text/javascript" src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    
+  
+    
+      <script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+    
+  
+    
+      <script type="text/javascript" src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    
+  
+    
+      <link rel="stylesheet" type="text/css" href="https://www.amcharts.com/lib/3/plugins/export/export.css">
+    
+  
+    
+      <script type="text/javascript" src="https://code.angularjs.org/angular-1.0.1.js"></script>
+    
+  
+
+  <style type="text/css">
+    #chartdiv {
+  width: 100%;
+  height: 500px;
+  font-size: 11px;
+}
+
+  </style>
+
+  <title>Simple Column Chart</title>
+
+  
+</head>
+
+<body ng-app="myApp">
+  <div id="chartdiv" ng-controller="MyCtrl"></div>
+
+  
+
+
+
+
+<script type="text/javascript">//<![CDATA[
+
+var myApp = angular.module('myApp', []);
+
+var graphData = [];
+
+/*
+There is no exercise here, feel free to simply enjoy your hardwork in getting here.
+*/
+
+function MyCtrl($scope, $http, $filter) { 
+  var data = {
+    "attribute": {
+      "Method": "GET",
+      "Resource": "https://devdata.osisoft.com/piwebapi/attributes?path=\\\\PISRV1\\UCDavisBuildings\\Buildings\\Buildings\\Vet Med 3B\\Electricity|Kw&selectedFields=WebId;Name"
+    },
+    "data": {
+      "Method": "GET",
+      "Resource": "https://devdata.osisoft.com/piwebapi/streams/{0}/summary?summaryDuration=1d&startTime=T-7d+1h&selectedFields=Items.Value.Value;Items.Value.TimeStamp",
+      "ParentIds": ["attribute"],
+      "Parameters": ["$.attribute.Content.WebId"]
+    }
+  }
+
+  //PI WebAPI login credentials. Already encoded
+  $http.defaults.headers.common['Authorization'] = "Basic " + "d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=";
+  $http.defaults.headers.common['Content-Type'] = 'application/json';
+
+  $http.post("https://devdata.osisoft.com/piwebapi/batch", data, {}).success(function(response) {
+    $scope.name = response.attribute.Content.Name;
+    $scope.items = response.data.Content.Items;
+    var items = response.data.Content.Items;
+    for (var i = 0; i < response.data.Content.Items.length; i++) {
+      var value = response.data.Content.Items[i].Value;
+      // We reformat the timestamp to get the day's name.
+      value.Timestamp = $filter('date')(value.Timestamp, 'EEEE');
+      graphData.push(response.data.Content.Items[i].Value);
+    }
+    var chart = AmCharts.makeChart("chartdiv", configuration);
+  });
+}
+
+
+// The configuration of JSFiddle 
+var configuration = {
+  "type": "serial",
+  "theme": "light",
+  "dataProvider": graphData,
+  "valueAxes": [{
+    "gridColor": "#000000",
+    "gridAlpha": 0.2,
+    "dashLength": 0
+  }],
+  "gridAboveGraphs": true,
+  "startDuration": 1,
+  "graphs": [{
+    "balloonText": "[[category]]: <b>[[value]]</b>",
+    "fillAlphas": 0.8,
+    "lineAlpha": 0.2,
+    "type": "column",
+    "valueField": "Value"
+  }],
+  "chartCursor": {
+    "categoryBalloonEnabled": false,
+    "cursorAlpha": 0,
+    "zoomable": false
+  },
+  "categoryField": "Timestamp",
+  "categoryAxis": {
+    "gridPosition": "start",
+    "gridAlpha": 0,
+    "tickPosition": "start",
+    "tickLength": 20
+  }
+}
+
+//]]> 
+
+</script>
+
+  <script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "hqjut7a4"
+    }], "*")
+  }
+</script>
+
+</body>
+
+</html>
+

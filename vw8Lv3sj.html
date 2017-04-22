@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+
+  
+  
+
+  
+  
+  
+
+  
+
+  <script type="text/javascript" src="/js/lib/dummy.js"></script>
+
+  
+
+  
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+
+  
+    
+      <script type="text/javascript" src="http://code.angularjs.org/angular-1.0.1.js"></script>
+    
+  
+
+  <style type="text/css">
+    
+  </style>
+
+  <title>Using AngularJS to format the data coming in from PI Web API</title>
+
+  
+</head>
+
+<body ng-app="myApp">
+  <div ng-controller="MyCtrl">
+  <!-- {{name}} is the value $scope.name -->
+  <p>Record values for: {{name}}</p>
+  <div ng-repeat="item in items">
+    {{item.Value.Timestamp | date:&quot;EEEE&quot;}} | {{item.Value.Value | number:2}} {{DefaultUnitsName}}
+  </div>
+</div>
+
+  
+
+
+
+
+<script type="text/javascript">//<![CDATA[
+
+var myApp = angular.module('myApp', []);
+
+/*
+First skim over the two sections, the html code above and the JavaScript below.
+The code is written using the AngularJS version 1 https://angularjs.org/ library.
+A common library and the library in which PI Vision custom symbols are written it.
+
+The main idea that we are using is that there is a bridge between the html text and the JavaScript code, in the $scope variable. The attributes of the $scope variable are directly available from the html code, thus, in the code below all we need to do is build up the $scope object and what will be displayed will automatically be refreshed.
+
+Exercise:
+1. In the html code above, we noticed that {{DefaultUnitsName}} is not actually used. We are hoping to be able to display the units associated to this attribute. First, fix the batch request to also retrieve this information.
+2. Now that this information is actually returned from PI Web API, we need define an attribute of the $scope object with this information. Do this below the line that defines $scope.items.
+*/
+
+function MyCtrl($scope, $http) {
+  var data = {
+    "getAttribute": {
+      "Method": "GET",
+      "Resource": "https://devdata.osisoft.com/piwebapi/attributes?path=\\\\PISRV1\\UCDavisBuildings\\Buildings\\Buildings\\Vet Med 3B\\Electricity|Kw&selectedFields=WebId;Name"
+    },
+    "getData": {
+      "Method": "GET",
+      "Resource": "https://devdata.osisoft.com/piwebapi/streams/{0}/summary?summaryDuration=1d&startTime=T-7d+1h&selectedFields=Items.Value.Value;Items.Value.TimeStamp",
+      "ParentIds": ["getAttribute"],
+      "Parameters": ["$.getAttribute.Content.WebId"]
+    }
+  }
+
+  // The same two headers that were required with Postman are required here as well
+  $http.defaults.headers.common['Authorization'] = "Basic " + "d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=";
+  $http.defaults.headers.common['Content-Type'] = 'application/json';
+
+  // We are optimistic and only implement a success method.
+  $http.post("https://devdata.osisoft.com/piwebapi/batch", data, {}).success(function(response) {
+    // The variables of the $scope object are available from the html code.
+    /* Here is a snippet of the JSON object from the response
+      "getData": {
+        "Status": 200,
+        "Headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "528"
+        },
+        "Content": {
+          "Items": [
+            {
+              "Value": {
+                "Timestamp": "2017-04-13T23:00:00Z",
+                "Value": 319.18142648626258
+              }
+            },
+    Thus in order to get access to the list of data, we need to drill down to getData.Content.Items
+    */
+    $scope.name = response.getAttribute.Content.Name;
+    $scope.items = response.getData.Content.Items;
+  });
+}
+
+//]]> 
+
+</script>
+
+  <script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "vw8Lv3sj"
+    }], "*")
+  }
+</script>
+
+</body>
+
+</html>
+
