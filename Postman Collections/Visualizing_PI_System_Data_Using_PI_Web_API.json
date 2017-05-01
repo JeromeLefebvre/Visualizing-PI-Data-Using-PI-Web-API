@@ -486,6 +486,47 @@
         "description": "We now move on to including the sub-requests that returns the data.\n\n**Exercise**:\n1. Run the query as it is currently defined. Notice in particular that while that the getData part of the request is returned first, this is in part due that there is no dependence set up between the two sub-request and thus no natural order for which the data to be returned.\n1. We want to specify that the 'getData' sub-request actually will depend on the 'getAttribute' sub-requests. To add in a dependence, add in the following after the Resource line of getData.\n``` \"ParentIds\": [\"getAttribute\"] ```\nOnce you do so, you should see a red X next to the previous line. This specifies that there is a syntax error in the JSON syntax. In particular, every entry needs to be comma separated. Thus, you need to add in a comma at the end of the \"Resource\" line.\n1. Now that the two sub-requests are dependent on each other, we can grab data that is collected in the first request and use it in the second sun-request, in particular we want to grab the WebID that is in the GetAttribute sub-request. To do so we further add in:\n``` \"Parameters\": [\"$.getAttribute.Content.WebId\"] ```\nThis means, from the getAttribute sub-request, grab the WebID from the Content section.\n1. Hitting send, won't actually have changed much yet. We now need to actualy use the WebID we have retrieved. To do so, replace the WebID included in the getData sub-request with simply {0} . {0} stands for the first parameter in the Parameters list.\n\nThe next two exercises are two ways of graphically representing this data using JavaScript.\n<http://jsfiddle.net/vw8Lv3sj/9/>  <http://jsfiddle.net/hqjut7a4/13/>"
       },
       "response": []
+    },
+    {
+      "_postman_id": "a1f14ca7-e927-5e44-d561-1e52f2924378",
+      "name": "5. (Solution) Use a batch request to combine step 3 and 4. copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 207\"] = responseCode.code === 207;",
+              "",
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;",
+              "tests[\"Correctly retrieve the data\"] = jsonData.getData.Status === 200;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://devdata.osisoft.com/piwebapi/batch",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=WebId\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/streams/{0}/Summary?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",  \r\n  \"ParentIds\": [\"getAttribute\"],  \r\n  \"Parameters\": [\"$.getAttribute.Content.WebId\"]  \r\n }  \r\n}"
+        },
+        "description": ""
+      },
+      "response": []
     }
   ]
 }
