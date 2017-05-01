@@ -449,7 +449,7 @@
     },
     {
       "_postman_id": "a1f14ca7-e927-5e44-d561-1e52f2924378",
-      "name": "5. (Solution) Use a batch request to combine step 3 and 4. copy",
+      "name": "5. Redo (Solution) Use a batch request to combine step 3 and 4. copy",
       "event": [
         {
           "listen": "test",
