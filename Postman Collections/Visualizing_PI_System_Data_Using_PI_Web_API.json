@@ -449,7 +449,7 @@
     },
     {
       "_postman_id": "cd7fc895-a364-1852-2da2-39ee8b1da170",
-      "name": "5 b. A batch request to combine retrieving data about an attribute and a RDA call copy",
+      "name": "5 b. redo A batch request to combine retrieving data about an attribute and a RDA call copy",
       "event": [
         {
           "listen": "test",
