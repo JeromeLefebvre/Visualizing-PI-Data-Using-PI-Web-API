@@ -266,7 +266,7 @@
     },
     {
       "_postman_id": "6221cd01-b666-50ca-f5bf-1fda584000c6",
-      "name": "5 b. A batch request to combine retrieving data about an attribute and a RDA call copy",
+      "name": "6 a. Display data as table",
       "event": [
         {
           "listen": "test",
