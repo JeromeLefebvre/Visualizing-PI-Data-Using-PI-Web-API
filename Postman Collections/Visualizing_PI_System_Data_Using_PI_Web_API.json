@@ -338,7 +338,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"{0}?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",  \r\n  \"ParentIds\": [\"getAttribute\"],  \r\n  \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"]  \r\n }  \r\n}"
+          "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData;Name\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"{0}?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",  \r\n  \"ParentIds\": [\"getAttribute\"],  \r\n  \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"]  \r\n }  \r\n}"
         },
         "description": "We now move on to working on a full example using the amCharts library.\n\nOpen this JSFiddle <http://jsfiddle.net/hqjut7a4/15/> \n\nThere is no exercise here, feel look around the code and simply enjoy your hardwork in getting here."
       },
