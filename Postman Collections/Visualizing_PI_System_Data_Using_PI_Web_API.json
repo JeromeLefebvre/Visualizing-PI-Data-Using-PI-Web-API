@@ -26,7 +26,7 @@
         "method": "GET",
         "header": [],
         "body": {},
-        "description": "About this training\n\nThe details regarding this training are found in the link below, if you accidentally landed into this collection, I strongly suggest you read the post below first before continuing.\n\n<https://pisquare.osisoft.com/community/developers-club/blog/2017/04/19/how-to-create-a-simple-pi-data-symbol-with-pi-web-api-and-amcharts>\n\nIn particular, this training is designed using external data sources, those data sources can change without notice and if so may break the following exercises. If you find that some request in the solution fail, visit the page above to get an updated version of the training.\n\nNote: Within this Postman collection several tests are configured, you may safely ignore them."
+        "description": "**About this training**\n\nThe details regarding this training are found in the link below, if you accidentally landed into this collection, I strongly suggest you read the post below first before continuing.\n\n<https://pisquare.osisoft.com/community/developers-club/blog/2017/04/19/how-to-create-a-simple-pi-data-symbol-with-pi-web-api-and-amcharts>\n\nIn particular, this training is designed using external data sources, those data sources can change without notice and if so may break the following exercises. If you find that some request in the solution fail, visit the page above to get an updated version of the training.\n\nNote: Within this Postman collection several tests are configured, you may safely ignore them."
       },
       "response": []
     },
