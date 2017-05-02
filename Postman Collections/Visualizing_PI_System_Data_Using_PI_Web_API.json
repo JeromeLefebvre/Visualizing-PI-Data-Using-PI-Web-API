@@ -282,7 +282,7 @@
         }
       ],
       "request": {
-        "url": "https://devdata.osisoft.com/piwebapi/batch",
+        "url": "http://jsfiddle.net/vw8Lv3sj/9/",
         "method": "POST",
         "header": [
           {
