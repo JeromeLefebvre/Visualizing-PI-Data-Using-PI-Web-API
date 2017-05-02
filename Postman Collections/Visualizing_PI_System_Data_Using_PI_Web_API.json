@@ -306,7 +306,7 @@
     },
     {
       "_postman_id": "d88baed8-9228-a188-a5ce-157a1b4feb00",
-      "name": "6 a. Display data as table copy",
+      "name": "6 a. Display data as bar graph",
       "event": [
         {
           "listen": "test",
