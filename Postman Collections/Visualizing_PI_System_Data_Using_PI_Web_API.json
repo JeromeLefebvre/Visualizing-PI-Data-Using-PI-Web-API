@@ -9,7 +9,7 @@
   "item": [
     {
       "_postman_id": "5804ccb0-25cf-67b6-ce99-fb8ee2518671",
-      "name": "0. Notes regarding \"Visualizating PI System Data Using PI Web API\" - 2017",
+      "name": "0. Notes regarding \"Visualizating PI System Data Using PI Web API\"",
       "event": [
         {
           "listen": "test",
