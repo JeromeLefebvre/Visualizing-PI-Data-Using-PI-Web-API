@@ -363,7 +363,7 @@
         }
       ],
       "request": {
-        "url": "https://devdata.osisoft.com/piwebapi/attributes?path=\\\\PISRV1\\UCDavisBuildings\\Buildings\\Buildings\\Vet Med 3B\\Electricity|Demand_kBtu&selectedFields=Name;Path;Links",
+        "url": "https://devdata.osisoft.com/piwebapi/attributes?path=\\\\PISRV1\\UCDavisBuildings\\Buildings\\Buildings\\Vet Med 3B\\Electricity|Demand_kBtu&selectedFields=WebID;Name",
         "method": "GET",
         "header": [
           {
