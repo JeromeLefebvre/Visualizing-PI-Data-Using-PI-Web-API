@@ -306,7 +306,7 @@
     },
     {
       "_postman_id": "b38b5ca9-9f37-6937-dde1-a359e204fbc8",
-      "name": "6. Final exercise",
+      "name": "7. Final exercise",
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
