@@ -26,7 +26,7 @@
         "method": "GET",
         "header": [],
         "body": {},
-        "description": "**About this training**\n\nI would strongly suggest you read the [details](https://pisquare.osisoft.com/community/developers-club/blog/2017/04/19/how-to-create-a-simple-pi-data-symbol-with-pi-web-api-and-amcharts) on this training before you continue. The latest version of the training is also found there. Thus, if you face an issue, look at the post to get the latest version.\n\nNote: Within this Postman collection several tests are configured, you may safely ignore them.\n\nSyntax notes:\n* [Links](https://pisquare.osisoft.com/community/developers-club/blog/2017/04/19/how-to-create-a-simple-pi-data-symbol-with-pi-web-api-and-amcharts) are in orange.\n* Piece of code or url are highlighted in ```gray```"
+        "description": "**About this training**\n\nI would strongly suggest you read the [details](https://pisquare.osisoft.com/community/developers-club/blog/2017/04/19/how-to-create-a-simple-pi-data-symbol-with-pi-web-api-and-amcharts) on this training before you continue. The latest version of the training is also found there. Thus, if you face an issue, look at the post to get the latest version.\n\nNote: Within this Postman collection several tests are configured, you may safely ignore them.\n\nSyntax notes:\n* [Links](https://pisquare.osisoft.com/community/developers-club/blog/2017/04/19/how-to-create-a-simple-pi-data-symbol-with-pi-web-api-and-amcharts) are in orange.\n* Piece of code or url are highlighted in ```grey```"
       },
       "response": []
     },
