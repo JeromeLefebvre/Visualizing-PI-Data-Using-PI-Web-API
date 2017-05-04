@@ -158,17 +158,6 @@
     {
       "_postman_id": "8cffc7f9-4e53-754d-97df-703530ebb5de",
       "name": "4. Rich data access (RDA) for an attribute",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/streams/A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV/recorded",
         "method": "GET",
