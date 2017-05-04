@@ -227,20 +227,6 @@
     {
       "_postman_id": "d42ce84d-a5ee-636e-39c5-d18144e48b4c",
       "name": "5 b. A batch request to combine retrieving data about an attribute and a RDA call",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 207\"] = responseCode.code === 207;",
-              "",
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;"
-            ]
-          }
-        }
-      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
@@ -267,20 +253,6 @@
     {
       "_postman_id": "6221cd01-b666-50ca-f5bf-1fda584000c6",
       "name": "6 a. Display data as table",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 207\"] = responseCode.code === 207;",
-              "",
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;"
-            ]
-          }
-        }
-      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
