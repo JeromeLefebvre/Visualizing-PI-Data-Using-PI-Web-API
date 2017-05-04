@@ -472,7 +472,7 @@
         }
       ],
       "request": {
-        "url": "https://devdata.osisoft.com/piwebapi/streams/A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV/Summary?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time",
+        "url": "https://devdata.osisoft.com/piwebapi/streams/A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV/Summary?startTime=T-7d&endTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&timeZone=Pacific Standard Time",
         "method": "GET",
         "header": [
           {
