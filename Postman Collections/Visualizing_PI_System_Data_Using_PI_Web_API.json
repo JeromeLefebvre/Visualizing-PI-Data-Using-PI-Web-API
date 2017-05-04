@@ -307,20 +307,6 @@
     {
       "_postman_id": "d88baed8-9228-a188-a5ce-157a1b4feb00",
       "name": "6 b. Display data as bar graph",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 207\"] = responseCode.code === 207;",
-              "",
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;"
-            ]
-          }
-        }
-      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
@@ -340,7 +326,7 @@
           "mode": "raw",
           "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData;Name\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"{0}?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",  \r\n  \"ParentIds\": [\"getAttribute\"],  \r\n  \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"]  \r\n }  \r\n}"
         },
-        "description": "We now move on to working on a full example using the amCharts library.\n\nOpen this JSFiddle <http://jsfiddle.net/hqjut7a4/15/> \n\nThere is no exercise here, feel look around the code and simply enjoy your hardwork in getting here."
+        "description": "We now move on to working on a [full example](http://jsfiddle.net/hqjut7a4/15) using the [amCharts library](https://www.amcharts.com).\n\nThere are no exercises here, feel look around the code and simply enjoy your hardwork in getting here."
       },
       "response": []
     },
