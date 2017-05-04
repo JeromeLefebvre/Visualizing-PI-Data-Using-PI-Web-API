@@ -267,6 +267,20 @@
     {
       "_postman_id": "6221cd01-b666-50ca-f5bf-1fda584000c6",
       "name": "6 a. Display data as table",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 207\"] = responseCode.code === 207;",
+              "",
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;"
+            ]
+          }
+        }
+      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
@@ -293,6 +307,20 @@
     {
       "_postman_id": "d88baed8-9228-a188-a5ce-157a1b4feb00",
       "name": "6 b. Display data as bar graph",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 207\"] = responseCode.code === 207;",
+              "",
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;"
+            ]
+          }
+        }
+      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
