@@ -158,17 +158,6 @@
     {
       "_postman_id": "8cffc7f9-4e53-754d-97df-703530ebb5de",
       "name": "4. Rich data access (RDA) for an attribute",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/streams/A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV/recorded",
         "method": "GET",
@@ -187,20 +176,6 @@
     {
       "_postman_id": "9a00433a-6a04-1c7d-9972-a4f6e387769b",
       "name": "5 a. A batch request to combine retrieving data about an attribute and a RDA call",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 207\"] = responseCode.code === 207;",
-              "",
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;"
-            ]
-          }
-        }
-      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
@@ -227,20 +202,6 @@
     {
       "_postman_id": "d42ce84d-a5ee-636e-39c5-d18144e48b4c",
       "name": "5 b. A batch request to combine retrieving data about an attribute and a RDA call",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 207\"] = responseCode.code === 207;",
-              "",
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;"
-            ]
-          }
-        }
-      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
@@ -267,20 +228,6 @@
     {
       "_postman_id": "6221cd01-b666-50ca-f5bf-1fda584000c6",
       "name": "6 a. Display data as table",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 207\"] = responseCode.code === 207;",
-              "",
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;"
-            ]
-          }
-        }
-      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
@@ -307,20 +254,6 @@
     {
       "_postman_id": "d88baed8-9228-a188-a5ce-157a1b4feb00",
       "name": "6 b. Display data as bar graph",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 207\"] = responseCode.code === 207;",
-              "",
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;"
-            ]
-          }
-        }
-      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
@@ -340,7 +273,7 @@
           "mode": "raw",
           "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData;Name\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"{0}?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",  \r\n  \"ParentIds\": [\"getAttribute\"],  \r\n  \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"]  \r\n }  \r\n}"
         },
-        "description": "We now move on to working on a [full example](http://jsfiddle.net/hqjut7a4/15) using the [amCharts library](https://www.amcharts.com).\n\nThere are no exercises here, feel look around the code and simply enjoy your hardwork in getting here."
+        "description": "We now move on to working on a [full example](http://jsfiddle.net/hqjut7a4/15) using the [amCharts library](https://www.amcharts.com).\r\n\r\nThere are no exercises here, feel look around the code and simply enjoy your hard work in getting here. (For fun, you may want to change the time range used to and see what kind patterns are detectable in the data. Is there a weekly pattern?)"
       },
       "response": []
     },
