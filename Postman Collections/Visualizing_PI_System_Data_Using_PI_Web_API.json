@@ -158,6 +158,17 @@
     {
       "_postman_id": "8cffc7f9-4e53-754d-97df-703530ebb5de",
       "name": "4. Rich data access (RDA) for an attribute",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;"
+            ]
+          }
+        }
+      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/streams/A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV/recorded",
         "method": "GET",
@@ -176,6 +187,20 @@
     {
       "_postman_id": "9a00433a-6a04-1c7d-9972-a4f6e387769b",
       "name": "5 a. A batch request to combine retrieving data about an attribute and a RDA call",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 207\"] = responseCode.code === 207;",
+              "",
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;"
+            ]
+          }
+        }
+      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
@@ -202,6 +227,20 @@
     {
       "_postman_id": "d42ce84d-a5ee-636e-39c5-d18144e48b4c",
       "name": "5 b. A batch request to combine retrieving data about an attribute and a RDA call",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 207\"] = responseCode.code === 207;",
+              "",
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;"
+            ]
+          }
+        }
+      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
