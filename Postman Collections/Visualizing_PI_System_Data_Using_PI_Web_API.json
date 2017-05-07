@@ -459,32 +459,6 @@
         "description": ""
       },
       "response": []
-    },
-    {
-      "_postman_id": "b3e5d752-9146-17ed-f188-376cd4b7a848",
-      "name": "6 b. Display data as bar graph copy",
-      "request": {
-        "url": "https://devdata.osisoft.com/piwebapi/batch",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          },
-          {
-            "key": "Authorization",
-            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData;Name\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"{0}?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",  \r\n  \"ParentIds\": [\"getAttribute\"],  \r\n  \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"]  \r\n }  \r\n}"
-        },
-        "description": "We now move on to working on a [full example](http://jsfiddle.net/hqjut7a4/15) using the [amCharts library](https://www.amcharts.com).\r\n\r\nThere are no exercises here, feel look around the code and simply enjoy your hard work in getting here. (For fun, you may want to change the time range used to and see what kind patterns are detectable in the data. Is there a weekly pattern?)"
-      },
-      "response": []
     }
   ]
 }
