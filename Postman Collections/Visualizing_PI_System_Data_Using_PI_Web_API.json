@@ -175,7 +175,7 @@
     },
     {
       "_postman_id": "9a00433a-6a04-1c7d-9972-a4f6e387769b",
-      "name": "(retire) 5 a. A batch request to combine retrieving data about an attribute and a RDA call",
+      "name": "5 a. A batch request to combine retrieving data about an attribute and a RDA call",
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
