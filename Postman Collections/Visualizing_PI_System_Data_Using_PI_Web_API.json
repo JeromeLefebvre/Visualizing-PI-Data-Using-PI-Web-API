@@ -226,34 +226,8 @@
       "response": []
     },
     {
-      "_postman_id": "6221cd01-b666-50ca-f5bf-1fda584000c6",
-      "name": "(retired) 6 a. Display data as table",
-      "request": {
-        "url": "https://devdata.osisoft.com/piwebapi/batch",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          },
-          {
-            "key": "Authorization",
-            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n\t\"getAttribute\": {\r\n\t  \"Method\": \"GET\",\r\n\t  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData;Name\"\r\n\t},\r\n\t\"getData\": {\r\n\t  \"Method\": \"GET\",\r\n\t  \"Resource\": \"{0}?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",\r\n\t  \"ParentIds\": [\"getAttribute\"],\r\n\t  \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"]\r\n\t}\r\n}"
-        },
-        "description": "We now move on to working on a full example written in [AngularJS](https://angularjs.org/). A popular library and used when writing PI Vision custom symbols. The example is this [JSFiddle](http://jsfiddle.net/vw8Lv3sj/12/).\r\n\r\nFirst skim over the html and JavaScript sections.\r\n\r\nThe main concept from AngularJS that we are using is that the ```$scope``` variable is a bridge between HTML and JavaScript. The attributes of the ```$scope``` variable are directly available from the html code, thus, in the JavaScript code all we need to do is build up the $scope object.\r\n\r\n**Exercise**:\r\n1. In the html code, we noticed that ```{{Name}}``` is not actually used. We want to be able to display the name of the attribute. First, fix the batch request to also retrieve this information.\r\n2. Now that this information is returned from PI Web API, we need define an attribute of the ```$scope``` object with this information. Do this below the line that defines ```$scope.items```."
-      },
-      "response": []
-    },
-    {
       "_postman_id": "d88baed8-9228-a188-a5ce-157a1b4feb00",
-      "name": "6 b. Display data as bar graph",
+      "name": "6 Display data as bar graph",
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
@@ -457,6 +431,32 @@
           "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"{0}?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",  \r\n  \"ParentIds\": [\"getAttribute\"],  \r\n  \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"]  \r\n }  \r\n}"
         },
         "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "6221cd01-b666-50ca-f5bf-1fda584000c6",
+      "name": "(retired) 6 a. Display data as table",
+      "request": {
+        "url": "https://devdata.osisoft.com/piwebapi/batch",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\t\"getAttribute\": {\r\n\t  \"Method\": \"GET\",\r\n\t  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData;Name\"\r\n\t},\r\n\t\"getData\": {\r\n\t  \"Method\": \"GET\",\r\n\t  \"Resource\": \"{0}?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",\r\n\t  \"ParentIds\": [\"getAttribute\"],\r\n\t  \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"]\r\n\t}\r\n}"
+        },
+        "description": "We now move on to working on a full example written in [AngularJS](https://angularjs.org/). A popular library and used when writing PI Vision custom symbols. The example is this [JSFiddle](http://jsfiddle.net/vw8Lv3sj/12/).\r\n\r\nFirst skim over the html and JavaScript sections.\r\n\r\nThe main concept from AngularJS that we are using is that the ```$scope``` variable is a bridge between HTML and JavaScript. The attributes of the ```$scope``` variable are directly available from the html code, thus, in the JavaScript code all we need to do is build up the $scope object.\r\n\r\n**Exercise**:\r\n1. In the html code, we noticed that ```{{Name}}``` is not actually used. We want to be able to display the name of the attribute. First, fix the batch request to also retrieve this information.\r\n2. Now that this information is returned from PI Web API, we need define an attribute of the ```$scope``` object with this information. Do this below the line that defines ```$scope.items```."
       },
       "response": []
     }
