@@ -433,6 +433,18 @@
         "description": ""
       },
       "response": []
+    },
+    {
+      "_postman_id": "9d21d1b8-a52a-31e4-d658-321b673fd05b",
+      "name": "Other references",
+      "request": {
+        "url": "https://dotnetfiddle.net/u0RofL",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": []
     }
   ]
 }
