@@ -285,7 +285,7 @@
         "method": "GET",
         "header": [],
         "body": {},
-        "description": "Using the postman generated code, you can then create examples in many different other languages. Here is a list of simple exercises.\n\n1. C# <https://dotnetfiddle.net/u0RofL>"
+        "description": "Using the postman generated code, you can then create examples in many different other languages. Here is a list of simple samples in other languages.\n\n1. C# <https://dotnetfiddle.net/u0RofL>"
       },
       "response": []
     },
