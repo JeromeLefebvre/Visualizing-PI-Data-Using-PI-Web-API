@@ -1,7 +1,7 @@
 {
   "variables": [],
   "info": {
-    "name": "Visualizing PI System Data Using PI Web API",
+    "name": "PI Web API",
     "_postman_id": "f2732831-4545-46e6-fcdf-6eca66746aa3",
     "description": "Visualizating PI System Data using PI Web API.",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
