@@ -247,7 +247,7 @@
           "mode": "raw",
           "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData;Name\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"{0}?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",  \r\n  \"ParentIds\": [\"getAttribute\"],  \r\n  \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"]  \r\n }  \r\n}"
         },
-        "description": "We are now changing gears and starting a new section which involves visualization and usage of web technologies. If you have experience with HTML and JavaScript you will certainly enjoin the following, if not, feel free to stop after viewing the introductory [video](https://google.com).\r\n\r\nLet's examine an [example](http://jsfiddle.net/zu3tmtc3/6/) using the [amCharts library](https://www.amcharts.com). Feel free to look around the code and in particular in the JavaScript section, notice that it is made up of three parts.\r\n\r\n* A section to retrieve data from PI Web API\r\n* A method to convert the data coming from PI Web API\r\n* The configuration of the bar graph as a JSON object\r\n\r\nFeel further free to edit the code and test out any ideas you may have. You may want to change the time range used to and see what kind patterns are detectable in the data. Is the weekly pattern visiable?\r\n\r\nNote that we are using the following two libraries for this example.\r\n* [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js)\r\n* [jsonPath](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/jsonpath/jsonpath-0.8.0.js.txt)"
+        "description": "We are now changing gears and starting a new section which involves visualization and usage of web technologies. If you have experience with HTML and JavaScript you will certainly enjoin the following, if not, feel free to stop after viewing the introductory [video](https://google.com).\r\n\r\nLet's examine an [example](http://jsfiddle.net/zu3tmtc3/8/) using the [amCharts library](https://www.amcharts.com). Feel free to look around the code and in particular in the JavaScript section, notice that it is made up of three parts.\r\n\r\n* A section to retrieve data from PI Web API\r\n* A method to convert the data coming from PI Web API\r\n* The configuration of the bar graph as a JSON object\r\n\r\nFeel further free to edit the code and test out any ideas you may have. You may want to change the time range used to and see what kind patterns are detectable in the data. Is the weekly pattern visiable?\r\n\r\nNote that we are using the following two libraries for this example.\r\n* [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js)\r\n* [jsonPath](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/jsonpath/jsonpath-0.8.0.js.txt)"
       },
       "response": []
     },
@@ -345,7 +345,69 @@
         "body": {},
         "description": ""
       },
-      "response": []
+      "response": [
+        {
+          "id": "207402b3-c26f-a448-8366-7ce6ff72f8d6",
+          "name": "Solution",
+          "originalRequest": {
+            "url": "https://devdata.osisoft.com/piwebapi/AssetDatabases?path=\\\\PISRV1\\UCDavisBuildings",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
+                "description": ""
+              }
+            ],
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "_postman_previewtype": "text",
+          "header": [
+            {
+              "name": "Cache-Control",
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "description": ""
+            },
+            {
+              "name": "Content-Encoding",
+              "key": "Content-Encoding",
+              "value": "gzip",
+              "description": ""
+            },
+            {
+              "name": "Content-Length",
+              "key": "Content-Length",
+              "value": "446",
+              "description": ""
+            },
+            {
+              "name": "Content-Type",
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8",
+              "description": ""
+            },
+            {
+              "name": "Date",
+              "key": "Date",
+              "value": "Thu, 01 Jun 2017 01:33:32 GMT",
+              "description": ""
+            },
+            {
+              "name": "Server",
+              "key": "Server",
+              "value": "Microsoft-HTTPAPI/2.0",
+              "description": ""
+            }
+          ],
+          "cookie": [],
+          "responseTime": "1036",
+          "body": "{\"WebId\":\"D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M\",\"Id\":\"76765dba-3635-4407-820b-989fd13e7156\",\"Name\":\"UCDavisBuildings\",\"Description\":\"\",\"Path\":\"\\\\\\\\PISRV1\\\\UCDavisBuildings\",\"ExtendedProperties\":{},\"Links\":{\"Self\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M\",\"Elements\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elements\",\"ElementTemplates\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elementtemplates\",\"EventFrames\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/eventframes\",\"AssetServer\":\"https://devdata.osisoft.com/piwebapi/assetservers/S0IRAQC7zjPUOfBqai218IAwUElTUlYx\",\"ElementCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elementcategories\",\"AttributeCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/attributecategories\",\"TableCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/tablecategories\",\"AnalysisCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/analysiscategories\",\"AnalysisTemplates\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/analysistemplates\",\"EnumerationSets\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/enumerationsets\",\"Tables\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/tables\",\"Security\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/security\",\"SecurityEntries\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/securityentries\"}}"
+        }
+      ]
     },
     {
       "_postman_id": "87b55e15-59d4-8770-26e3-7a0a6d826f13",
