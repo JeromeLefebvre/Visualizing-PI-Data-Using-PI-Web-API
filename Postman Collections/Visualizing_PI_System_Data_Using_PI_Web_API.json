@@ -350,7 +350,29 @@
           "id": "207402b3-c26f-a448-8366-7ce6ff72f8d6",
           "name": "Solution",
           "originalRequest": {
-            "url": "https://devdata.osisoft.com/piwebapi/AssetDatabases?path=\\\\PISRV1\\UCDavisBuildings",
+            "url": {
+              "raw": "https://devdata.osisoft.com/piwebapi/AssetDatabases?path=\\\\PISRV1\\UCDavisBuildings",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "devdata",
+                "osisoft",
+                "com"
+              ],
+              "path": [
+                "piwebapi",
+                "AssetDatabases"
+              ],
+              "query": [
+                {
+                  "key": "path",
+                  "value": "\\\\PISRV1\\UCDavisBuildings",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
