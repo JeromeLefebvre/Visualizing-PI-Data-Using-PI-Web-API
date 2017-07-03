@@ -40,6 +40,119 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "01139cc7-e205-74d7-347c-a574e39cf605",
+          "name": "2. (Solution) Get a specific AF Server By using its Path",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://devdata.osisoft.com/piwebapi/AssetDatabases?path=\\\\PISRV1\\UCDavisBuildings",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "207402b3-c26f-a448-8366-7ce6ff72f8d6",
+              "name": "Solution",
+              "originalRequest": {
+                "url": {
+                  "raw": "https://devdata.osisoft.com/piwebapi/AssetDatabases?path=\\\\PISRV1\\UCDavisBuildings",
+                  "protocol": "https",
+                  "auth": {},
+                  "host": [
+                    "devdata",
+                    "osisoft",
+                    "com"
+                  ],
+                  "path": [
+                    "piwebapi",
+                    "AssetDatabases"
+                  ],
+                  "query": [
+                    {
+                      "key": "path",
+                      "value": "\\\\PISRV1\\UCDavisBuildings",
+                      "equals": true,
+                      "description": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
+                    "description": ""
+                  }
+                ],
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "name": "Cache-Control",
+                  "key": "Cache-Control",
+                  "value": "no-cache",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Encoding",
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Length",
+                  "key": "Content-Length",
+                  "value": "446",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "description": ""
+                },
+                {
+                  "name": "Date",
+                  "key": "Date",
+                  "value": "Thu, 01 Jun 2017 01:33:32 GMT",
+                  "description": ""
+                },
+                {
+                  "name": "Server",
+                  "key": "Server",
+                  "value": "Microsoft-HTTPAPI/2.0",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "1036",
+              "body": "{\"WebId\":\"D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M\",\"Id\":\"76765dba-3635-4407-820b-989fd13e7156\",\"Name\":\"UCDavisBuildings\",\"Description\":\"\",\"Path\":\"\\\\\\\\PISRV1\\\\UCDavisBuildings\",\"ExtendedProperties\":{},\"Links\":{\"Self\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M\",\"Elements\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elements\",\"ElementTemplates\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elementtemplates\",\"EventFrames\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/eventframes\",\"AssetServer\":\"https://devdata.osisoft.com/piwebapi/assetservers/S0IRAQC7zjPUOfBqai218IAwUElTUlYx\",\"ElementCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elementcategories\",\"AttributeCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/attributecategories\",\"TableCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/tablecategories\",\"AnalysisCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/analysiscategories\",\"AnalysisTemplates\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/analysistemplates\",\"EnumerationSets\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/enumerationsets\",\"Tables\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/tables\",\"Security\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/security\",\"SecurityEntries\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/securityentries\"}}"
+            }
+          ]
         }
       ]
     },
@@ -324,119 +437,6 @@
         "description": "Using the postman generated code, you can then create examples in many different other languages. Here is a list of simple samples in other languages.\n\n1. C# <https://dotnetfiddle.net/u0RofL>\n2. Curl <http://onlinecurl.com> You need to copy paste the code in the \"Enter curl command or URL\" field and hit \"Start you CURL\""
       },
       "response": []
-    },
-    {
-      "_postman_id": "01139cc7-e205-74d7-347c-a574e39cf605",
-      "name": "2. (Solution) Get a specific AF Server By using its Path",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://devdata.osisoft.com/piwebapi/AssetDatabases?path=\\\\PISRV1\\UCDavisBuildings",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
-            "description": ""
-          }
-        ],
-        "body": {},
-        "description": ""
-      },
-      "response": [
-        {
-          "id": "207402b3-c26f-a448-8366-7ce6ff72f8d6",
-          "name": "Solution",
-          "originalRequest": {
-            "url": {
-              "raw": "https://devdata.osisoft.com/piwebapi/AssetDatabases?path=\\\\PISRV1\\UCDavisBuildings",
-              "protocol": "https",
-              "auth": {},
-              "host": [
-                "devdata",
-                "osisoft",
-                "com"
-              ],
-              "path": [
-                "piwebapi",
-                "AssetDatabases"
-              ],
-              "query": [
-                {
-                  "key": "path",
-                  "value": "\\\\PISRV1\\UCDavisBuildings",
-                  "equals": true,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
-                "description": ""
-              }
-            ],
-            "body": {}
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": "json",
-          "_postman_previewtype": "text",
-          "header": [
-            {
-              "name": "Cache-Control",
-              "key": "Cache-Control",
-              "value": "no-cache",
-              "description": ""
-            },
-            {
-              "name": "Content-Encoding",
-              "key": "Content-Encoding",
-              "value": "gzip",
-              "description": ""
-            },
-            {
-              "name": "Content-Length",
-              "key": "Content-Length",
-              "value": "446",
-              "description": ""
-            },
-            {
-              "name": "Content-Type",
-              "key": "Content-Type",
-              "value": "application/json; charset=utf-8",
-              "description": ""
-            },
-            {
-              "name": "Date",
-              "key": "Date",
-              "value": "Thu, 01 Jun 2017 01:33:32 GMT",
-              "description": ""
-            },
-            {
-              "name": "Server",
-              "key": "Server",
-              "value": "Microsoft-HTTPAPI/2.0",
-              "description": ""
-            }
-          ],
-          "cookie": [],
-          "responseTime": "1036",
-          "body": "{\"WebId\":\"D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M\",\"Id\":\"76765dba-3635-4407-820b-989fd13e7156\",\"Name\":\"UCDavisBuildings\",\"Description\":\"\",\"Path\":\"\\\\\\\\PISRV1\\\\UCDavisBuildings\",\"ExtendedProperties\":{},\"Links\":{\"Self\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M\",\"Elements\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elements\",\"ElementTemplates\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elementtemplates\",\"EventFrames\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/eventframes\",\"AssetServer\":\"https://devdata.osisoft.com/piwebapi/assetservers/S0IRAQC7zjPUOfBqai218IAwUElTUlYx\",\"ElementCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elementcategories\",\"AttributeCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/attributecategories\",\"TableCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/tablecategories\",\"AnalysisCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/analysiscategories\",\"AnalysisTemplates\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/analysistemplates\",\"EnumerationSets\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/enumerationsets\",\"Tables\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/tables\",\"Security\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/security\",\"SecurityEntries\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/securityentries\"}}"
-        }
-      ]
     },
     {
       "_postman_id": "87b55e15-59d4-8770-26e3-7a0a6d826f13",
