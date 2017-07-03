@@ -501,7 +501,7 @@
     },
     {
       "_postman_id": "7aa3d41e-a6da-51aa-dba8-b2cf59230347",
-      "name": "5. (Solution) Use a batch request to combine step 3 and 4. copy copy copy",
+      "name": "7. Using queries against the tag database",
       "event": [
         {
           "listen": "test",
