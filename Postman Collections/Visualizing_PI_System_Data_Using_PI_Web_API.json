@@ -648,6 +648,77 @@
         "description": "Using the postman generated code, you can then create examples in many different other languages. Here is a list of simple samples in other languages.\n\n1. C# <https://dotnetfiddle.net/u0RofL>\n2. Curl <http://onlinecurl.com> You need to copy paste the code in the \"Enter curl command or URL\" field and hit \"Start you CURL\""
       },
       "response": []
+    },
+    {
+      "_postman_id": "541e9b03-d77e-985b-8635-cce8633eb766",
+      "name": "7 a. Using queries against the tag database and advance batch requests copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 207\"] = responseCode.code === 207;",
+              "",
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;",
+              "tests[\"Correctly retrieve the data\"] = jsonData.getData.Status === 200;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": {
+          "raw": "https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10",
+          "protocol": "https",
+          "auth": {},
+          "host": [
+            "devdata",
+            "osisoft",
+            "com"
+          ],
+          "path": [
+            "piwebapi",
+            "dataservers",
+            "s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx",
+            "points"
+          ],
+          "query": [
+            {
+              "key": "nameFilter",
+              "value": "s*",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "count",
+              "value": "10",
+              "equals": true,
+              "description": ""
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{  \r\n \"getTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10\"  \r\n },  \r\n  \"getDataLinks\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getDataLinks\"],  \r\n   \"Parameters\": [\"$.getDataLinks.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
+        },
+        "description": "Here are querying all tags that start with a S. Look for all tags that have point source R and only the first 5.\n\nhttps://devdata.osisoft.com/piwebapi/help/topics/search-queries\n\nNo select fields: \n\nhttps://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10"
+      },
+      "response": []
     }
   ]
 }
