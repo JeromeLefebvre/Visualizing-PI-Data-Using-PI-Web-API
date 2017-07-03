@@ -153,6 +153,35 @@
               "body": "{\"WebId\":\"D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M\",\"Id\":\"76765dba-3635-4407-820b-989fd13e7156\",\"Name\":\"UCDavisBuildings\",\"Description\":\"\",\"Path\":\"\\\\\\\\PISRV1\\\\UCDavisBuildings\",\"ExtendedProperties\":{},\"Links\":{\"Self\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M\",\"Elements\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elements\",\"ElementTemplates\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elementtemplates\",\"EventFrames\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/eventframes\",\"AssetServer\":\"https://devdata.osisoft.com/piwebapi/assetservers/S0IRAQC7zjPUOfBqai218IAwUElTUlYx\",\"ElementCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elementcategories\",\"AttributeCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/attributecategories\",\"TableCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/tablecategories\",\"AnalysisCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/analysiscategories\",\"AnalysisTemplates\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/analysistemplates\",\"EnumerationSets\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/enumerationsets\",\"Tables\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/tables\",\"Security\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/security\",\"SecurityEntries\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/securityentries\"}}"
             }
           ]
+        },
+        {
+          "_postman_id": "87b55e15-59d4-8770-26e3-7a0a6d826f13",
+          "name": "3. (Solution) How to retrieve specific information about an attribute",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://devdata.osisoft.com/piwebapi/attributes?path=\\\\PISRV1\\UCDavisBuildings\\Buildings\\Buildings\\Vet Med 3B\\Electricity|Demand_kBtu&selectedFields=Name;Path;Links",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
@@ -435,35 +464,6 @@
         "header": [],
         "body": {},
         "description": "Using the postman generated code, you can then create examples in many different other languages. Here is a list of simple samples in other languages.\n\n1. C# <https://dotnetfiddle.net/u0RofL>\n2. Curl <http://onlinecurl.com> You need to copy paste the code in the \"Enter curl command or URL\" field and hit \"Start you CURL\""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "87b55e15-59d4-8770-26e3-7a0a6d826f13",
-      "name": "3. (Solution) How to retrieve specific information about an attribute",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://devdata.osisoft.com/piwebapi/attributes?path=\\\\PISRV1\\UCDavisBuildings\\Buildings\\Buildings\\Vet Med 3B\\Electricity|Demand_kBtu&selectedFields=Name;Path;Links",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
-            "description": ""
-          }
-        ],
-        "body": {},
-        "description": ""
       },
       "response": []
     },
