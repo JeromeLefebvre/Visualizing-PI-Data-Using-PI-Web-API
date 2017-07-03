@@ -572,7 +572,7 @@
     },
     {
       "_postman_id": "41b55dd0-aea4-dd95-44d2-a771e7162e2c",
-      "name": "7 b. Using queries against the tag database and advance batch requests",
+      "name": "8. Using queries against the tag database and advance batch requests",
       "event": [
         {
           "listen": "test",
