@@ -607,7 +607,7 @@
           "mode": "raw",
           "raw": "{  \r\n \"getTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10\"  \r\n },  \r\n  \"getDataLinks\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getDataLinks\"],  \r\n   \"Parameters\": [\"$.getDataLinks.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
         },
-        "description": ""
+        "description": "We can apply the same sub-batch to a list of requests using the RequestTemplate key word."
       },
       "response": []
     },
