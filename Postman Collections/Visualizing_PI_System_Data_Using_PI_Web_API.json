@@ -518,8 +518,38 @@
         }
       ],
       "request": {
-        "url": "https://devdata.osisoft.com/piwebapi/batch",
-        "method": "POST",
+        "url": {
+          "raw": "https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10",
+          "protocol": "https",
+          "auth": {},
+          "host": [
+            "devdata",
+            "osisoft",
+            "com"
+          ],
+          "path": [
+            "piwebapi",
+            "dataservers",
+            "s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx",
+            "points"
+          ],
+          "query": [
+            {
+              "key": "nameFilter",
+              "value": "s*",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "count",
+              "value": "10",
+              "equals": true,
+              "description": ""
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
         "header": [
           {
             "key": "Content-Type",
