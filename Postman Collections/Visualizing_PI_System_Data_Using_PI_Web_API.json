@@ -745,7 +745,7 @@
           "mode": "raw",
           "raw": "{  \r\n \"getTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10\"  \r\n },  \r\n  \"getDataLinks\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getDataLinks\"],  \r\n   \"Parameters\": [\"$.getDataLinks.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
         },
-        "description": "When we think of performance, what we have done so far requires relatively big requests.\nIf we cache results on the client side we can achieve better performance using streamsets."
+        "description": "When we think of performance, what we have done so far requires relatively big requests.\nIf we cache results on the client side we can achieve better performance using streamsets.\n\nhttps://pisquare.osisoft.com/people/arosenthal/blog/2017/06/03/pi-web-api-bulk-streaming-with-batch-requests"
       },
       "response": []
     },
