@@ -541,6 +541,47 @@
       "response": []
     },
     {
+      "_postman_id": "41b55dd0-aea4-dd95-44d2-a771e7162e2c",
+      "name": "7 b. Using queries against the tag database",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 207\"] = responseCode.code === 207;",
+              "",
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;",
+              "tests[\"Correctly retrieve the data\"] = jsonData.getData.Status === 200;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://devdata.osisoft.com/piwebapi/batch",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{  \r\n \"getTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10\"  \r\n },  \r\n  \"getDataLinks\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getDataLinks\"],  \r\n   \"Parameters\": [\"$.getDataLinks.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
       "_postman_id": "b38b5ca9-9f37-6937-dde1-a359e204fbc8",
       "name": "7. Final exercise (JavaScript)",
       "request": {
