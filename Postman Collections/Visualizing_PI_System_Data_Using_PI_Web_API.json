@@ -571,8 +571,8 @@
       "response": []
     },
     {
-      "_postman_id": "41b55dd0-aea4-dd95-44d2-a771e7162e2c",
-      "name": "8. Using queries against the tag database and advance batch requests",
+      "_postman_id": "d50695eb-b5dc-adbb-63bf-efd2749a013a",
+      "name": "7 b. Using queries against the tag database and advance batch requests copy",
       "event": [
         {
           "listen": "test",
@@ -612,8 +612,8 @@
       "response": []
     },
     {
-      "_postman_id": "d50695eb-b5dc-adbb-63bf-efd2749a013a",
-      "name": "7 b. Using queries against the tag database and advance batch requests copy",
+      "_postman_id": "41b55dd0-aea4-dd95-44d2-a771e7162e2c",
+      "name": "8. Using queries against the tag database and advance batch requests",
       "event": [
         {
           "listen": "test",
