@@ -8,6 +8,12 @@
   },
   "item": [
     {
+      "_postman_id": "54b942c9-779a-caf9-9582-0b0ace3a1158",
+      "name": "Solutions",
+      "description": "The solutions to the various excercises. Please verify them whenever you get stuck.",
+      "item": []
+    },
+    {
       "_postman_id": "5804ccb0-25cf-67b6-ce99-fb8ee2518671",
       "name": "0.  \"Visualizating PI System Data Using PI Web API\" (expand the triangle on the left)",
       "event": [
