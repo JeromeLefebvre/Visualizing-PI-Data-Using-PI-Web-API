@@ -11,7 +11,37 @@
       "_postman_id": "54b942c9-779a-caf9-9582-0b0ace3a1158",
       "name": "Solutions",
       "description": "The solutions to the various excercises. Please verify them whenever you get stuck.",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "cd9aa09d-6a80-b5bc-bf85-dbfa7b0a5f2c",
+          "name": "1. (Solution) First PI Web API request, get the list of currently registered PI Data Archives copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://devdata.osisoft.com/piwebapi/AssetServers",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "5804ccb0-25cf-67b6-ce99-fb8ee2518671",
@@ -292,35 +322,6 @@
         "header": [],
         "body": {},
         "description": "Using the postman generated code, you can then create examples in many different other languages. Here is a list of simple samples in other languages.\n\n1. C# <https://dotnetfiddle.net/u0RofL>\n2. Curl <http://onlinecurl.com> You need to copy paste the code in the \"Enter curl command or URL\" field and hit \"Start you CURL\""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "cd9aa09d-6a80-b5bc-bf85-dbfa7b0a5f2c",
-      "name": "1. (Solution) First PI Web API request, get the list of currently registered PI Data Archives copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://devdata.osisoft.com/piwebapi/AssetServers",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
-            "description": ""
-          }
-        ],
-        "body": {},
-        "description": ""
       },
       "response": []
     },
