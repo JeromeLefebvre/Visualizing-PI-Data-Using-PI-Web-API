@@ -182,6 +182,35 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "1811c6ad-d758-a5fa-d01d-abfa828b6486",
+          "name": "4. (Solution) Rich data access for an attribute",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://devdata.osisoft.com/piwebapi/streams/A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV/Summary?startTime=T-7d&endTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&timeZone=Pacific Standard Time",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
@@ -464,35 +493,6 @@
         "header": [],
         "body": {},
         "description": "Using the postman generated code, you can then create examples in many different other languages. Here is a list of simple samples in other languages.\n\n1. C# <https://dotnetfiddle.net/u0RofL>\n2. Curl <http://onlinecurl.com> You need to copy paste the code in the \"Enter curl command or URL\" field and hit \"Start you CURL\""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "1811c6ad-d758-a5fa-d01d-abfa828b6486",
-      "name": "4. (Solution) Rich data access for an attribute",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://devdata.osisoft.com/piwebapi/streams/A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV/Summary?startTime=T-7d&endTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&timeZone=Pacific Standard Time",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
-            "description": ""
-          }
-        ],
-        "body": {},
-        "description": ""
       },
       "response": []
     },
