@@ -541,7 +541,7 @@
       ],
       "request": {
         "url": {
-          "raw": "https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10",
+          "raw": "https://devdata.osisoft.com/piwebapi/search/query?q=name:s*&scope=pi:PISRV1",
           "protocol": "https",
           "auth": {},
           "host": [
@@ -551,20 +551,19 @@
           ],
           "path": [
             "piwebapi",
-            "dataservers",
-            "s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx",
-            "points"
+            "search",
+            "query"
           ],
           "query": [
             {
-              "key": "nameFilter",
-              "value": "s*",
+              "key": "q",
+              "value": "name:s*",
               "equals": true,
               "description": ""
             },
             {
-              "key": "count",
-              "value": "10",
+              "key": "scope",
+              "value": "pi:PISRV1",
               "equals": true,
               "description": ""
             }
