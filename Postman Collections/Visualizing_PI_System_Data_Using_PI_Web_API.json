@@ -541,7 +541,7 @@
       ],
       "request": {
         "url": {
-          "raw": "https://devdata.osisoft.com/piwebapi/search/query?q=name:s*&scope=pi:PISRV1",
+          "raw": "https://devdata.osisoft.com/piwebapi/search/query?q=name:s* AND name:*u&scope=pi:PISRV1",
           "protocol": "https",
           "auth": {},
           "host": [
@@ -557,7 +557,7 @@
           "query": [
             {
               "key": "q",
-              "value": "name:s*",
+              "value": "name:s* AND name:*u",
               "equals": true,
               "description": ""
             },
