@@ -749,7 +749,7 @@
           "mode": "raw",
           "raw": "{  \r\n \"searchTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/search/query?q=pointsource:R&scope=pi:PISRV1&Count=5&Fields=Links\"  \r\n },  \r\n  \"getTags\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"searchTags\"],  \r\n   \"Parameters\": [\"$.searchTags.Content.Items[*].Links.Self\"]  \r\n  }\r\n}"
         },
-        "description": "We can apply the same sub-batch to a list of requests using the RequestTemplate key word.\n\nFrom the docs:\nA request can alternatively specify a request template in place of a resource. In this case, a single JsonPath may select multiple tokens, and a separate subrequest will be made from the template for each token. The responses of these subrequests will returned as the content of a single outer response."
+        "description": "In exercises 7, we saw how to retrieve the a reference to several different tags. Now the question is how can we now retrieve information regarding those different tags. One way we could is off course to simply loop over the result in our client applications and make each request indivually, but as this is such a frequent request, PI Web API introduced the ability to loop over similiar fields using the ```RequestTemplate```\n\nFrom the docs:\nA request can alternatively specify a request template in place of a resource. In this case, a single JsonPath may select multiple tokens, and a separate subrequest will be made from the template for each token. The responses of these subrequests will returned as the content of a single outer response."
       },
       "response": []
     },
