@@ -330,6 +330,48 @@
             "description": "PI Web API is actually made of two different services. One service that we have used so far that returns data about attributes, elements and such. The other creates an index of your PI System. In other words, it creates a small database that contains information regarding all your elements, tags, etc. You can query this database using a set of filters that can return information such all elements that start with the letter A or all tags with location1=4 and pointType=OPC.\n\n\nLet's look at the example that is already filled in the URL below by hittin the ```Params``` button.\nWe see that q (standing in for query) is ```name:s*``` which means, return all everything that starts with the letter \"s\". The \"*\" is a wildcard character.\n\nThe scope paramter restrict where the data comes from, in this case it is ```pi:PISRV1```, this case the results must come from the PI Data Archive \"PISRV1\".\n\nThus we are retrieving all tags that start with the letter \"s\". Hit send to confirm this.\n\nTo restrict what is being queried, we can add more fields to our query. For example, we can add an other name field to require that we are looking at tags that only start with a \"s\" and end with a \"u\". This is done by simply adding a ```AND``` conditional and writting it as ```name:s* AND name:*u```.\n\nExercises:\n1. Look for all tags that have point source R\n2. Return only the first 5 of such tags. (use the [```count```](https://devdata.osisoft.com/piwebapi/help/topics/search-queries) paramter for this)\n3. For each tag found, only return the links. (this uses the [```fields```](https://devdata.osisoft.com/piwebapi/help/controllers/search/actions/query) parameters which is more limited than selectFields we have used so far.)"
           },
           "response": []
+        },
+        {
+          "_postman_id": "f39d332d-f42a-0baa-ed3d-0b96627f5150",
+          "name": "(Draft) 7 b. Using queries against the tag database and advance batch requests copy copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 207\"] = responseCode.code === 207;",
+                  "",
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Correctly retrieve the attribute\"] = jsonData.getTags.Status === 200;",
+                  "tests[\"Correctly retrieve the dataLinks\"] = jsonData.getDataLinks.Status === 200;",
+                  "tests[\"Correctly retrieve the data\"] = jsonData.getData.Status === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://devdata.osisoft.com/piwebapi/batch",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{  \r\n \"getTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10\"  \r\n },  \r\n  \"getDataLinks\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getDataLinks\"],  \r\n   \"Parameters\": [\"$.getDataLinks.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
+            },
+            "description": "We can apply the same sub-batch to a list of requests using the RequestTemplate key word.\n\nFrom the docs:\nA request can alternatively specify a request template in place of a resource. In this case, a single JsonPath may select multiple tokens, and a separate subrequest will be made from the template for each token. The responses of these subrequests will returned as the content of a single outer response."
+          },
+          "response": []
         }
       ]
     },
@@ -672,48 +714,6 @@
     {
       "_postman_id": "d50695eb-b5dc-adbb-63bf-efd2749a013a",
       "name": "(Draft) 7 b. Using queries against the tag database and advance batch requests copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 207\"] = responseCode.code === 207;",
-              "",
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Correctly retrieve the attribute\"] = jsonData.getTags.Status === 200;",
-              "tests[\"Correctly retrieve the dataLinks\"] = jsonData.getDataLinks.Status === 200;",
-              "tests[\"Correctly retrieve the data\"] = jsonData.getData.Status === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://devdata.osisoft.com/piwebapi/batch",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          },
-          {
-            "key": "Authorization",
-            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{  \r\n \"getTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10\"  \r\n },  \r\n  \"getDataLinks\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getDataLinks\"],  \r\n   \"Parameters\": [\"$.getDataLinks.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
-        },
-        "description": "We can apply the same sub-batch to a list of requests using the RequestTemplate key word.\n\nFrom the docs:\nA request can alternatively specify a request template in place of a resource. In this case, a single JsonPath may select multiple tokens, and a separate subrequest will be made from the template for each token. The responses of these subrequests will returned as the content of a single outer response."
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "f39d332d-f42a-0baa-ed3d-0b96627f5150",
-      "name": "(Draft) 7 b. Using queries against the tag database and advance batch requests copy copy",
       "event": [
         {
           "listen": "test",
