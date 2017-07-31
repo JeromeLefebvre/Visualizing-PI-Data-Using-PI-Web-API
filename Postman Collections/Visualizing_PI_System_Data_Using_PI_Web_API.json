@@ -713,7 +713,7 @@
     },
     {
       "_postman_id": "d50695eb-b5dc-adbb-63bf-efd2749a013a",
-      "name": "(Draft) 7 b. Using queries against the tag database and advance batch requests copy",
+      "name": "(Draft) 8. RequestTemplate - Advance batch requests",
       "event": [
         {
           "listen": "test",
