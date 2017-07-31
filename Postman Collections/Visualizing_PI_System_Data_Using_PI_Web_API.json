@@ -269,7 +269,7 @@
           ],
           "request": {
             "url": {
-              "raw": "https://devdata.osisoft.com/piwebapi/search/query?q=name:s*&scope=pi:PISRV1",
+              "raw": "https://devdata.osisoft.com/piwebapi/search/query?q=pointsource:R&scope=pi:PISRV1&Count=5&Fields=Links",
               "protocol": "https",
               "auth": {},
               "host": [
@@ -285,13 +285,25 @@
               "query": [
                 {
                   "key": "q",
-                  "value": "name:s*",
+                  "value": "pointsource:R",
                   "equals": true,
                   "description": ""
                 },
                 {
                   "key": "scope",
                   "value": "pi:PISRV1",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "Count",
+                  "value": "5",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "Fields",
+                  "value": "Links",
                   "equals": true,
                   "description": ""
                 }
