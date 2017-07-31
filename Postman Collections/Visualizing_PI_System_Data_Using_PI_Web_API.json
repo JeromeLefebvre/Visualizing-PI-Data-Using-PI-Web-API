@@ -256,6 +256,72 @@
       ]
     },
     {
+      "_postman_id": "7aa3d41e-a6da-51aa-dba8-b2cf59230347",
+      "name": "(Draft) 7 a. Using queries against the tag database and advance batch requests",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": {
+          "raw": "https://devdata.osisoft.com/piwebapi/search/query?q=name:s*&scope=pi:PISRV1",
+          "protocol": "https",
+          "auth": {},
+          "host": [
+            "devdata",
+            "osisoft",
+            "com"
+          ],
+          "path": [
+            "piwebapi",
+            "search",
+            "query"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "name:s*",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "scope",
+              "value": "pi:PISRV1",
+              "equals": true,
+              "description": ""
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{  \r\n \"getTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10\"  \r\n },  \r\n  \"getDataLinks\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getDataLinks\"],  \r\n   \"Parameters\": [\"$.getDataLinks.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
+        },
+        "description": "PI Web API is actually made of two different services. One service that we have used so far that returns data about attributes, elements and such. The other creates an index of your PI System. In other words, it creates a small database that contains information regarding all your elements, tags, etc. You can query this database using a set of filters that can return information such all elements that start with the letter A or all tags with location1=4 and pointType=OPC.\n\n\nLet's look at the example that is already filled in the URL below by hittin the ```Params``` button.\nWe see that q (standing in for query) is ```name:s*``` which means, return all everything that starts with the letter \"s\". The \"*\" is a wildcard character.\n\nThe scope paramter restrict where the data comes from, in this case it is ```pi:PISRV1```, this case the results must come from the PI Data Archive \"PISRV1\".\n\nThus we are retrieving all tags that start with the letter \"s\". Hit send to confirm this.\n\nTo restrict what is being queried, we can add more fields to our query. For example, we can add an other name field to require that we are looking at tags that only start with a \"s\" and end with a \"u\". This is done by simply adding a ```AND``` conditional and writting it as ```name:s* AND name:*u```.\n\nExercises:\n1. Look for all tags that have point source R\n2. Return only the first 5 of such tags. (use the [```count```](https://devdata.osisoft.com/piwebapi/help/topics/search-queries) paramter for this)\n3. For each tag found, only return the links. (this uses the [```fields```](https://devdata.osisoft.com/piwebapi/help/controllers/search/actions/query) parameters which is more limited than selectFields we have used so far.)"
+      },
+      "response": []
+    },
+    {
       "_postman_id": "5804ccb0-25cf-67b6-ce99-fb8ee2518671",
       "name": "0.  \"Visualizating PI System Data Using PI Web API\" (expand the triangle on the left)",
       "event": [
@@ -526,72 +592,6 @@
       "response": []
     },
     {
-      "_postman_id": "7aa3d41e-a6da-51aa-dba8-b2cf59230347",
-      "name": "(Draft) 7 a. Using queries against the tag database and advance batch requests",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": {
-          "raw": "https://devdata.osisoft.com/piwebapi/search/query?q=name:s* AND name:*u&scope=pi:PISRV1",
-          "protocol": "https",
-          "auth": {},
-          "host": [
-            "devdata",
-            "osisoft",
-            "com"
-          ],
-          "path": [
-            "piwebapi",
-            "search",
-            "query"
-          ],
-          "query": [
-            {
-              "key": "q",
-              "value": "name:s* AND name:*u",
-              "equals": true,
-              "description": ""
-            },
-            {
-              "key": "scope",
-              "value": "pi:PISRV1",
-              "equals": true,
-              "description": ""
-            }
-          ],
-          "variable": []
-        },
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          },
-          {
-            "key": "Authorization",
-            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{  \r\n \"getTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10\"  \r\n },  \r\n  \"getDataLinks\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getDataLinks\"],  \r\n   \"Parameters\": [\"$.getDataLinks.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
-        },
-        "description": "PI Web API is actually made of two different services. One service that we have used so far that returns data about attributes, elements and such. The other creates an index of your PI System. In other words, it creates a small database that contains information regarding all your elements, tags, etc. You can query this database using a set of filters that can return information such all elements that start with the letter A or all tags with location1=4 and pointType=OPC.\n\n\nLet's look at the example that is already filled in the URL below by hittin the ```Params``` button.\nWe see that q (standing in for query) is ```name:s*``` which means, return all everything that starts with the letter \"s\". The \"*\" is a wildcard character.\n\nThe scope paramter restrict where the data comes from, in this case it is ```pi:PISRV1```, this case the results must come from the PI Data Archive \"PISRV1\".\n\nThus we are retrieving all tags that start with the letter \"s\". Hit send to confirm this.\n\nTo restrict what is being queried, we can add more fields to our query. For example, we can add an other name field to require that we are looking at tags that only start with a \"s\" and end with a \"u\". This is done by simply adding a ```AND``` conditional and writting it as ```name:s* AND name:*u```.\n\nExercises:\n1. Look for all tags that have point source R\n2. Return only the first 5 of such tags. (use the [```count```](https://devdata.osisoft.com/piwebapi/help/topics/search-queries) paramter for this)\n3. For each tag found, only return the links. (this uses the [```fields```](https://devdata.osisoft.com/piwebapi/help/controllers/search/actions/query) parameters which is more limited than selectFields we have used so far.)"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "d50695eb-b5dc-adbb-63bf-efd2749a013a",
       "name": "(Draft) 7 b. Using queries against the tag database and advance batch requests copy",
       "event": [
@@ -739,6 +739,72 @@
         "header": [],
         "body": {},
         "description": "Using the postman generated code, you can then create examples in many different other languages. Here is a list of simple samples in other languages.\n\n1. C# <https://dotnetfiddle.net/u0RofL>\n2. Curl <http://onlinecurl.com> You need to copy paste the code in the \"Enter curl command or URL\" field and hit \"Start you CURL\""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "e8d169ca-184b-9eb8-0516-02638db99809",
+      "name": "(Draft) 7 a. Using queries against the tag database and advance batch requests copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": {
+          "raw": "https://devdata.osisoft.com/piwebapi/search/query?q=name:s* AND name:*u&scope=pi:PISRV1",
+          "protocol": "https",
+          "auth": {},
+          "host": [
+            "devdata",
+            "osisoft",
+            "com"
+          ],
+          "path": [
+            "piwebapi",
+            "search",
+            "query"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "name:s* AND name:*u",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "scope",
+              "value": "pi:PISRV1",
+              "equals": true,
+              "description": ""
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{  \r\n \"getTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10\"  \r\n },  \r\n  \"getDataLinks\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getDataLinks\"],  \r\n   \"Parameters\": [\"$.getDataLinks.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
+        },
+        "description": "PI Web API is actually made of two different services. One service that we have used so far that returns data about attributes, elements and such. The other creates an index of your PI System. In other words, it creates a small database that contains information regarding all your elements, tags, etc. You can query this database using a set of filters that can return information such all elements that start with the letter A or all tags with location1=4 and pointType=OPC.\n\n\nLet's look at the example that is already filled in the URL below by hittin the ```Params``` button.\nWe see that q (standing in for query) is ```name:s*``` which means, return all everything that starts with the letter \"s\". The \"*\" is a wildcard character.\n\nThe scope paramter restrict where the data comes from, in this case it is ```pi:PISRV1```, this case the results must come from the PI Data Archive \"PISRV1\".\n\nThus we are retrieving all tags that start with the letter \"s\". Hit send to confirm this.\n\nTo restrict what is being queried, we can add more fields to our query. For example, we can add an other name field to require that we are looking at tags that only start with a \"s\" and end with a \"u\". This is done by simply adding a ```AND``` conditional and writting it as ```name:s* AND name:*u```.\n\nExercises:\n1. Look for all tags that have point source R\n2. Return only the first 5 of such tags. (use the [```count```](https://devdata.osisoft.com/piwebapi/help/topics/search-queries) paramter for this)\n3. For each tag found, only return the links. (this uses the [```fields```](https://devdata.osisoft.com/piwebapi/help/controllers/search/actions/query) parameters which is more limited than selectFields we have used so far.)"
       },
       "response": []
     }
