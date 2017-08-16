@@ -255,7 +255,7 @@
         },
         {
           "_postman_id": "ccc396b8-3ae0-dc49-5912-7933827dff05",
-          "name": "7. Using queries to search for tags",
+          "name": "7. Using queries against the tag database and advance batch requests",
           "event": [
             {
               "listen": "test",
@@ -333,7 +333,7 @@
         },
         {
           "_postman_id": "f39d332d-f42a-0baa-ed3d-0b96627f5150",
-          "name": "8. RequestTemplate - Advance batch requests",
+          "name": "7 b. Using queries against the tag database and advance batch requests",
           "event": [
             {
               "listen": "test",
@@ -621,7 +621,7 @@
     },
     {
       "_postman_id": "7aa3d41e-a6da-51aa-dba8-b2cf59230347",
-      "name": "(Draft) 7. Using queries to search for tags",
+      "name": "(Draft) 7. Using queries against the tag database and advance batch requests",
       "event": [
         {
           "listen": "test",
@@ -713,7 +713,7 @@
     },
     {
       "_postman_id": "d50695eb-b5dc-adbb-63bf-efd2749a013a",
-      "name": "(Draft) 8. Advance batch requests",
+      "name": "(Draft) 8. RequestTemplate - Advance batch requests",
       "event": [
         {
           "listen": "test",
