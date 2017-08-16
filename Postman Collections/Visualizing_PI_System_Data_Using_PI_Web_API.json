@@ -43,7 +43,7 @@
         },
         {
           "_postman_id": "01139cc7-e205-74d7-347c-a574e39cf605",
-          "name": "2. Get a specific AF Server By using its Path",
+          "name": "2. (Solution) Get a specific AF Server By using its Path",
           "event": [
             {
               "listen": "test",
@@ -156,7 +156,7 @@
         },
         {
           "_postman_id": "87b55e15-59d4-8770-26e3-7a0a6d826f13",
-          "name": "3. How to retrieve specific information about an attribute",
+          "name": "3. (Solution) How to retrieve specific information about an attribute",
           "event": [
             {
               "listen": "test",
@@ -185,7 +185,7 @@
         },
         {
           "_postman_id": "1811c6ad-d758-a5fa-d01d-abfa828b6486",
-          "name": "4. Rich data access for an attribute",
+          "name": "4. (Solution) Rich data access for an attribute",
           "event": [
             {
               "listen": "test",
