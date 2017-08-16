@@ -43,7 +43,7 @@
         },
         {
           "_postman_id": "01139cc7-e205-74d7-347c-a574e39cf605",
-          "name": "2. (Solution) Get a specific AF Server By using its Path",
+          "name": "2. Get a specific AF Server By using its Path",
           "event": [
             {
               "listen": "test",
@@ -156,7 +156,7 @@
         },
         {
           "_postman_id": "87b55e15-59d4-8770-26e3-7a0a6d826f13",
-          "name": "3. (Solution) How to retrieve specific information about an attribute",
+          "name": "3. How to retrieve specific information about an attribute",
           "event": [
             {
               "listen": "test",
@@ -185,7 +185,7 @@
         },
         {
           "_postman_id": "1811c6ad-d758-a5fa-d01d-abfa828b6486",
-          "name": "4. (Solution) Rich data access for an attribute",
+          "name": "4. Rich data access for an attribute",
           "event": [
             {
               "listen": "test",
@@ -214,7 +214,7 @@
         },
         {
           "_postman_id": "d12d0aaf-c363-80bd-5511-33da087273eb",
-          "name": "5. (Solution) Use a batch request to combine step 3 and 4.",
+          "name": "5. Use a batch request to combine step 3 and 4.",
           "event": [
             {
               "listen": "test",
@@ -255,7 +255,7 @@
         },
         {
           "_postman_id": "ccc396b8-3ae0-dc49-5912-7933827dff05",
-          "name": "7. Using queries against the tag database and advance batch requests",
+          "name": "7. Using queries to search for tags",
           "event": [
             {
               "listen": "test",
@@ -333,7 +333,7 @@
         },
         {
           "_postman_id": "f39d332d-f42a-0baa-ed3d-0b96627f5150",
-          "name": "7 b. Using queries against the tag database and advance batch requests",
+          "name": "8. RequestTemplate - Advance batch requests",
           "event": [
             {
               "listen": "test",
@@ -621,7 +621,7 @@
     },
     {
       "_postman_id": "7aa3d41e-a6da-51aa-dba8-b2cf59230347",
-      "name": "(Draft) 7. Using queries against the tag database and advance batch requests",
+      "name": "(Draft) 7. Using queries to search for tags",
       "event": [
         {
           "listen": "test",
