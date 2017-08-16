@@ -255,7 +255,7 @@
         },
         {
           "_postman_id": "ccc396b8-3ae0-dc49-5912-7933827dff05",
-          "name": "7. Using queries to search for tags",
+          "name": "7. Using queries against the tag database and advance batch requests",
           "event": [
             {
               "listen": "test",
