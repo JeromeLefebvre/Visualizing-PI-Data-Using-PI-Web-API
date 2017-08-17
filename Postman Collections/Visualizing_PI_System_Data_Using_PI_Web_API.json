@@ -621,7 +621,7 @@
     },
     {
       "_postman_id": "7aa3d41e-a6da-51aa-dba8-b2cf59230347",
-      "name": "(Draft) 7. Using queries to search for tags",
+      "name": "7. Using queries to search for tags",
       "event": [
         {
           "listen": "test",
