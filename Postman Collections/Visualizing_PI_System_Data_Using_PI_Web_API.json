@@ -156,7 +156,7 @@
         },
         {
           "_postman_id": "87b55e15-59d4-8770-26e3-7a0a6d826f13",
-          "name": "3. (Solution) How to retrieve specific information about an attribute",
+          "name": "3. How to retrieve specific information about an attribute",
           "event": [
             {
               "listen": "test",
@@ -185,7 +185,7 @@
         },
         {
           "_postman_id": "1811c6ad-d758-a5fa-d01d-abfa828b6486",
-          "name": "4. (Solution) Rich data access for an attribute",
+          "name": "4. Rich data access for an attribute",
           "event": [
             {
               "listen": "test",
@@ -214,7 +214,7 @@
         },
         {
           "_postman_id": "d12d0aaf-c363-80bd-5511-33da087273eb",
-          "name": "5. (Solution) Use a batch request to combine step 3 and 4.",
+          "name": "5. Use a batch request to combine step 3 and 4.",
           "event": [
             {
               "listen": "test",
@@ -255,7 +255,7 @@
         },
         {
           "_postman_id": "ccc396b8-3ae0-dc49-5912-7933827dff05",
-          "name": "7. Using queries against the tag database and advance batch requests",
+          "name": "7. Using queries to search for tags",
           "event": [
             {
               "listen": "test",
@@ -333,7 +333,7 @@
         },
         {
           "_postman_id": "f39d332d-f42a-0baa-ed3d-0b96627f5150",
-          "name": "7 b. Using queries against the tag database and advance batch requests",
+          "name": "8. RequestTemplate - Advance batch requests",
           "event": [
             {
               "listen": "test",
@@ -621,7 +621,7 @@
     },
     {
       "_postman_id": "7aa3d41e-a6da-51aa-dba8-b2cf59230347",
-      "name": "(Draft) 7. Using queries against the tag database and advance batch requests",
+      "name": "(Draft) 7. Using queries to search for tags",
       "event": [
         {
           "listen": "test",
@@ -681,7 +681,7 @@
           "mode": "raw",
           "raw": "{  \r\n \"getTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10\"  \r\n },  \r\n  \"getDataLinks\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getDataLinks\"],  \r\n   \"Parameters\": [\"$.getDataLinks.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
         },
-        "description": "PI Web API is made of two different services. One service, simply called PI Web API that returns data about attributes, elements and such and we have been using it so far. The other, called the PI Web API Crawler, creates an index of your PI System. In other words, it creates a small database that contains information regarding about elements, tags, etc. You can query this database using a set of filters. Those filters allow you for example to get a list of all elements that start with the letter A or all tags with location1=4 and pointType=OPC.\n\n\nLet's look at the example that is already filled in the URL below by hittin the ```Params``` button.\nWe see that q (standing in for query) is ```name:s*``` which means, return all everything that starts with the letter \"s\". The \"*\" is a wildcard character.\n\nThe scope paramter restrict where the data comes from, in this case it is ```pi:PISRV1```, in this case we filtered all the results for them to come from the PI Data Archive \"PISRV1\".\n\nThus we are retrieving all tags that start with the letter \"s\". Hit send to confirm this.\n\nTo restrict what is being queried, we can add more fields to our query. For example, we can add an other name field to require that we are looking at tags that only start with a \"s\" and end with a \"u\". This is done by simply adding a ```AND``` conditional and writting it as ```name:s* AND name:*u```.\n\nExercises:\n1. Look for all tags that have point source R\n2. Return only the first 5 of such tags. (use the [```count```](https://devdata.osisoft.com/piwebapi/help/topics/search-queries) paramter for this)\n3. For each tag found, only return the links. (this uses the [```fields```](https://devdata.osisoft.com/piwebapi/help/controllers/search/actions/query) parameters which is more limited than selectFields we have used so far.)"
+        "description": "PI Web API is made of two different services. One service, simply called PI Web API which returns data about attributes, elements, etc. (this is the service weve been interacting so far). The other, called the PI Web API Crawler, creates an index of your PI System. In other words, it creates a small database that contains information regarding tags, elements, etc. You can query this database using a set of filters. Those filters allow you, for example, to get a list of all elements that start with the letter A or all tags with location1=4 and pointType=OPC.\r\n\r\n\r\nLet's look at the example that is already filled in the URL below by hitting the ```Params``` button.\r\nWe see that q (standing in for query) is ```name:s*``` which means, return all everything that starts with the letter \"s\". The \"*\" being a wildcard character.\r\n\r\nThe scope parameter restricts where the data comes from, in this case ```pi:PISRV1```, which filtered all the results to only those that come from the PI Data Archive \"PISRV1\".\r\n\r\nIn other words, we are retrieving all tags that start with the letter \"s\". Hit send to confirm this.\r\n\r\nTo restrict what is being queried further, we can add more fields to our query. For example, we can add another name field to require that we are looking at tags that also end with a \"u\". This is done by simply adding a ```AND``` condition and writing the query as ```name:s* AND name:*u```.\r\n\r\nExercises:\r\n1. Look for all tags that have point source R\r\n2. Return only the first 5 of such tags. (use the [```count```](https://devdata.osisoft.com/piwebapi/help/topics/search-queries) parameter for this)\r\n3. For each tag found, only return the links. (this uses the [```fields```](https://devdata.osisoft.com/piwebapi/help/controllers/search/actions/query) parameters which is more limited than the selectFields parameters we have used so far.)"
       },
       "response": []
     },
@@ -713,7 +713,7 @@
     },
     {
       "_postman_id": "d50695eb-b5dc-adbb-63bf-efd2749a013a",
-      "name": "(Draft) 8. RequestTemplate - Advance batch requests",
+      "name": "(Draft) 8. Advance batch requests",
       "event": [
         {
           "listen": "test",
@@ -749,7 +749,7 @@
           "mode": "raw",
           "raw": "{  \r\n \"searchTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/search/query?q=pointsource:R&scope=pi:PISRV1&Count=5&Fields=Links\"  \r\n },  \r\n  \"getTags\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"searchTags\"],  \r\n   \"Parameters\": [\"$.searchTags.Content.Items[*].Links.Self\"]  \r\n  }\r\n}"
         },
-        "description": "In exercises 7, we saw how to retrieve the a reference to several different tags. Now the question is how can we now retrieve information regarding those different tags. One way we could is off course to simply loop over the result in our client applications and make each request indivually, but as this is such a frequent request, PI Web API introduced the ability to loop over similiar fields within the batch request itself.\n\nThere is two steps to this process.\n1. We must request not a single paramemter but a list of parameter\n2. We replace the keyword Request by RequestTemplate\n\n\nTo request more information, we simply make more use of JSONPath functionality. One of the more general JSONpath that we use is the following: ```\"$.searchTags.Content.Items[*].Links.Self\"``` The ```*``` stands for the following: ```$.searchTags.Content.Items``` is a list of item, for each of these items return to me ```Links.self```.\n\nThe change from ```Request``` to ```RequestTemplate``` is trivial.\n\nHit ```Send``` and examin what is returned with this new request.\n\nExercise:\n\t1. Add a new request that retrieves the current value for each of tags returned."
+        "description": "In exercises 7, we saw how to retrieve a reference to several different tags in one batch request. Now the question we ask is how we now retrieve information regarding those different tags, still in a single batch request. To handle this, PI Web API allows the ability to loop over the results of sub batch request.\r\n\r\nThis is a two steps process.\r\n1. We must request not a single parameter but a list of parameters\r\n2. We replace the keyword Request by RequestTemplate\r\n\r\n\r\nTo request more information, we simply make more use of JSONPath functionality. One of the more general JSONpath that we use is the following: ```\"$.searchTags.Content.Items[*].Links.Self\"``` The ```*``` stands for the following: ```$.searchTags.Content.Items``` is a list of item, for each of these items return to me ```Links.self```.\r\n\r\nThe change from ```Request``` to ```RequestTemplate``` is trivial.\r\n\r\nHit ```Send``` and examine what is returned with this new request.\r\n\r\nExercise:\r\n\t1. Add a new request that retrieves the current value for each of tags returned."
       },
       "response": []
     }
