@@ -198,7 +198,61 @@
             }
           ],
           "request": {
-            "url": "https://devdata.osisoft.com/piwebapi/streams/A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV/Summary?startTime=T-7d&endTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&timeZone=Pacific Standard Time",
+            "url": {
+              "raw": "https://devdata.osisoft.com/piwebapi/streams/A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV/Summary?summaryType=Total&startTime=T-7d&endTime=T&timeZone=Pacific Standard Time&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "devdata",
+                "osisoft",
+                "com"
+              ],
+              "path": [
+                "piwebapi",
+                "streams",
+                "A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV",
+                "Summary"
+              ],
+              "query": [
+                {
+                  "key": "summaryType",
+                  "value": "Total",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "startTime",
+                  "value": "T-7d",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "endTime",
+                  "value": "T",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "timeZone",
+                  "value": "Pacific Standard Time",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "summaryDuration",
+                  "value": "1d",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "selectedFields",
+                  "value": "Items.Value.Timestamp;Items.Value.Value",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
