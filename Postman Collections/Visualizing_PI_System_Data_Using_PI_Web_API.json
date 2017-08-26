@@ -444,7 +444,7 @@
         }
       ],
       "request": {
-        "url": "https://pisquare.osisoft.com/community/developers-club/blog/2017/04/19/how-to-create-a-simple-pi-data-symbol-with-pi-web-api-and-amcharts",
+        "url": "",
         "method": "GET",
         "header": [],
         "body": {},
