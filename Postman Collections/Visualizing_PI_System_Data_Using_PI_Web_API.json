@@ -768,22 +768,6 @@
     {
       "_postman_id": "d50695eb-b5dc-adbb-63bf-efd2749a013a",
       "name": "8. Advance batch requests",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 207\"] = responseCode.code === 207;",
-              "",
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Correctly retrieve the attribute\"] = jsonData.getTags.Status === 200;",
-              "tests[\"Correctly retrieve the dataLinks\"] = jsonData.getDataLinks.Status === 200;",
-              "tests[\"Correctly retrieve the data\"] = jsonData.getData.Status === 200;"
-            ]
-          }
-        }
-      ],
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/batch",
         "method": "POST",
