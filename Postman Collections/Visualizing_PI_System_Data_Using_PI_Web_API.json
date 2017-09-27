@@ -513,19 +513,8 @@
     {
       "_postman_id": "bbdd4ebf-6aa3-8eb1-3306-090b6df474e4",
       "name": "2 b. Get a specific AF Database by using its path",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 404\"] = responseCode.code === 404;"
-            ]
-          }
-        }
-      ],
       "request": {
-        "url": "https://devdata.osisoft.com/piwebapi/AssetDatabase",
+        "url": "https://devdata.osisoft.com/piwebapi/AssetDatabases",
         "method": "GET",
         "header": [
           {
