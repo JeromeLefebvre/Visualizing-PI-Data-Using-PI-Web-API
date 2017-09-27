@@ -525,7 +525,7 @@
         }
       ],
       "request": {
-        "url": "https://devdata.osisoft.com/piwebapi/AssetDatabases",
+        "url": "https://devdata.osisoft.com/piwebapi/AssetDatabase",
         "method": "GET",
         "header": [
           {
